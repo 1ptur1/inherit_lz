@@ -18,17 +18,8 @@ class Player:
                 return i
         return len(exp_table) + 1
     
-    '''Множитель атаки'''
-    def attack(self):
-        return self.level * 10 
-    
-    '''Формула защиты'''
-    def defend(self):
-        return math.sqrt(self.experience) * 2  
-    
     def show_stats(self):
-        return (f"Имя: {self.name}, Уровень: {self.level}, Опыт: {self.experience}, "
-                f"Атака: {self.attack()}, Защита: {self.defend():.2f}")
+        return (f"Имя: {self.name}, Уровень: {self.level}, Опыт: {self.experience} ")
     
 
 class Warrior(Player):
@@ -44,7 +35,15 @@ class Warrior(Player):
 
     '''Учитываем броню'''
     def defend(self):
-        return math.log(self.experience + 1) * self.armor  
-
+        return math.log(self.experience + 1) * self.armor 
+    
+    '''Множитель атаки'''
+    def attack(self):
+        return self.level * 10 
+    
+    '''Формула защиты'''
+    def defend(self):
+        return math.sqrt(self.experience) * 2  
+     
     def show_info(self):
         return (f"{self.show_stats()}, Оружие: {self.weapon}, Броня: {self.armor}")

@@ -1,4 +1,4 @@
-from player import Player, Warrior
+from player import Player
 
 def main():
     
